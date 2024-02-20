@@ -8,7 +8,7 @@ from resources.observation import ObservationVisualAcuity
 from resources.patient import Patient
 
 # Define the bcva_to_logmar_linear function
-def bcva_to_logmar_linear(bcva_score, max_logmar=2.0):
+def bcva_to_logmar_linear(bcva_score, max_logmar=1.0):
     bcva_score = max(0, min(100, bcva_score))
     logmar_value = max_logmar * (1 - bcva_score / 100)
     return logmar_value

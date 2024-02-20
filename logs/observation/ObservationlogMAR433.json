@@ -1,0 +1,51 @@
+{
+    "resourceType": "Observation",
+    "id": "433",
+    "status": "final",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "exam",
+                    "display": "Exam"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "419775003",
+                "display": "LogMAR visual acuity"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/216"
+    },
+    "effectiveDateTime": "2020-02-12T00:00:00",
+    "valueQuantity": {
+        "value": "0.27",
+        "unit": "logMAR"
+    },
+    "bodySite": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "362502000",
+                "display": "Entire Right eye"
+            }
+        ]
+    },
+    "method": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "400913005",
+                "display": "ETDRS chart"
+            }
+        ]
+    }
+}
