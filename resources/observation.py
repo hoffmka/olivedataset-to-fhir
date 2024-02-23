@@ -5,7 +5,7 @@ from fhir.resources.quantity import Quantity
 from fhir.resources.reference import Reference
 
 class ObservationVisualAcuity(Observation):
-    def __init__(self, id, patientid, snomed_code, snomed_display, effectiveDateTime, value, unit, bodysite_code, bodysite_display, method_code, method_display):
+    def __init__(self, id, patientid, code_code, code_display, effectiveDateTime, value, unit, bodysite_code, bodysite_display, method_code, method_display):
         super().__init__(
             id=id,
             status="final",
@@ -22,8 +22,8 @@ class ObservationVisualAcuity(Observation):
                 coding=[
                     Coding.construct(
                         system="http://snomed.info/sct",
-                        code=snomed_code,
-                        display=snomed_display
+                        code=code_code,
+                        display=code_display
                     )
                 ]
             ),
