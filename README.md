@@ -1,14 +1,42 @@
-# olivedataset-to-fhir
-## BCVA to logMAR
-### Source
-Paper - https://arxiv.org/pdf/2209.11195.pdf    
+# OPHTHAL-TO-FHIR
+## Description
+This work is intended to contribute to the standardization of ophthalmological data. This study describes the process of mapping ophthalmologic data from source systems to FHIR. Ophthalmology experts defined the following clinical parameters that are relevant for a clinical dashboard to be developed: Visual acuity, intraocular pressure and the OCT biomarkers retinal thickness, DRIL, HIF, VMT and PET detachment.
 
-ETDRS best-corrected
-visual acuity (BCVA) is a visual function assessment performed by certified examiners where a
-standard vision chart is placed 4 meters away from the patient. The patient is instructed to read the
-chart from left to right, from top to bottom until the subject completes 6 rows of letters or the subject
-is unable to read any more letters. The examiner marks how many letters were correctly identified by
-the patient. 
-#### ETDRS and Snellen chart relation 
-A Snellen score of 6/6 (20/20), indicating that an observer can resolve details as small as 1 minute of visual angle, corresponds to a LogMAR of 0 (since the base-10 logarithm of 1 is 0); 6 meters log value is 0.2 and var is 90, max log value is 1.0
-based on this I created a function that is available in olive_to_fhir_updated.py, and in logs folders sample JSON files are available
+Two data sets were used for the mapping process:
+1) the freely available [OLIVE dataset](https://doi.org/10.48550/arXiv.2209.11195) and
+2) Real-world data from the clinical information system "Turbomed" of the non-university hospital in Chemnitz.
+
+After ophthalmologists and FHIR specialists discussed the content of the data to be mapped, FHIR specialists developed sample ETL processes taking into account existing specifications such as the [Eyes on FHIR project](https://build.fhir.org/ig/HL7/fhir-eyecare-ig/index.html). The resulting FHIR resources are intended to improve interoperability and compatibility within the Medical Informatics Initiative (MII). The evaluation and validation by experts underlines the effectiveness and benefits of the mapping process.
+
+## Quickstart
+To bootstrap the project, create a virtual environment and install the requirements from ``requirements.pip``:
+
+```shell
+virtualenv env
+source path/to/env/bin/activate
+cd path/to/ophthal-to-fhir/repository
+pip install -r requirements.pip
+```
+
+## Project structure
+The `resources` directory contains classes for setting up FHIR resources.
+The `examples` directory contains resources for the ETL processes that can be used to map the data from the OLIVE dataset to FHIR (dir `olivedataset`) and resources for mapping real world data from the clinical information system Turbomed (dir `skc`).
+The directory `docs` contains further documentation of the resources and the mapping processes.
+
+## Mapping of the OLIVE dataset
+
+After installation of the requirements (see section Quickstart), move to the directory `examples/olivedataset` and execute the python script `olivedataset_etl.py`. A directory `output` with subdirectories will be created that contains the constructed FHIR resources in Form of json files. Example FHIR resources can be viewed section [OLIVE dataset example resources](docs/olivedataset_example_resources.md).
+
+```shell
+cd path/to/ophthal-to-fhir/examples/olivedataset
+python olivedataset_etl.py
+```
+
+For additional information and tools, see section [Auximiliary](docs/auximiliary.md)
+
+## Authors and acknowledgment
+- Katja Hoffmann
+- Holger Langner
+- Yuan Peng
+- Arunodhayan Sampath Kumar
+- Danny Kowerko
