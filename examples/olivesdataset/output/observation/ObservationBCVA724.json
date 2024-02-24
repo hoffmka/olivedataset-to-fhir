@@ -1,0 +1,51 @@
+{
+    "resourceType": "Observation",
+    "id": "724",
+    "status": "final",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "exam",
+                    "display": "Exam"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "419775003",
+                "display": "Best corrected visual acuity"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/220"
+    },
+    "effectiveDateTime": "2020-02-26T00:00:00",
+    "valueQuantity": {
+        "value": "82.0",
+        "unit": ""
+    },
+    "bodySite": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "362502000",
+                "display": "Entire Right eye"
+            }
+        ]
+    },
+    "method": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "400914004",
+                "display": "ETDRS visual acuity chart"
+            }
+        ]
+    }
+}
